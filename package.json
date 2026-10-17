@@ -1,0 +1,37 @@
+{
+  "name": "amongus-profile-manager",
+  "version": "1.0.0",
+  "description": "Among Us profile and platform manager",
+  "author": "Among Us Profile Manager",
+  "private": true,
+  "main": "electron/main.cjs",
+  "scripts": {
+    "start": "npm run build && electron .",
+    "dev": "node scripts/dev.cjs",
+    "dev:web": "ng serve --host 127.0.0.1 --port 4200 --configuration development",
+    "debug": "npm run dev",
+    "build": "ng build",
+    "test": "node --test tests/*.test.cjs",
+    "test:smoke": "electron scripts/smoke.cjs",
+    "test:dev": "node scripts/smoke-dev.cjs",
+    "dist": "npm run build && node scripts/package.cjs",
+    "dist:offline": "npm run build && node scripts/package.cjs --offline"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.18"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.0.0",
+    "@angular/cli": "^21.0.0",
+    "@angular/common": "^21.0.0",
+    "@angular/compiler": "^21.0.0",
+    "@angular/compiler-cli": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/forms": "^21.0.0",
+    "@angular/platform-browser": "^21.0.0",
+    "electron": "^41.0.0",
+    "electron-builder": "^26.0.12",
+    "rxjs": "^7.8.2",
+    "typescript": "~5.9.3"
+  }
+}

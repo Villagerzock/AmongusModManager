@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "mods": [
+    {
+      "id": "bepinex",
+      "name": "BepInEx IL2CPP",
+      "description": "Mod-Loader für Unity IL2CPP. Auf die von ATR 0.14.1 mitgelieferte Loader-Version abgestimmt.",
+      "versions": [
+        {
+          "version": "6.0.0-be.735",
+          "dependencies": [],
+          "downloads": {
+            "x86": {
+              "url": "https://builds.bepinex.dev/projects/bepinex_be/735/BepInEx-Unity.IL2CPP-win-x86-6.0.0-be.735%2B5fef357.zip",
+              "format": "zip",
+              "extract": [
+                "BepInEx/",
+                "dotnet/",
+                "winhttp.dll",
+                "doorstop_config.ini",
+                ".doorstop_version"
+              ]
+            },
+            "x64": {
+              "url": "https://builds.bepinex.dev/projects/bepinex_be/735/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.735%2B5fef357.zip",
+              "format": "zip",
+              "extract": [
+                "BepInEx/",
+                "dotnet/",
+                "winhttp.dll",
+                "doorstop_config.ini",
+                ".doorstop_version"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "reactor",
+      "name": "Reactor",
+      "description": "Gemeinsame Mod-Bibliothek, unter anderem für All The Roles.",
+      "versions": [
+        {
+          "version": "2.5.1",
+          "dependencies": [
+            {
+              "id": "bepinex",
+              "version": "6.0.0-be.735"
+            }
+          ],
+          "downloads": {
+            "any": {
+              "url": "https://github.com/NuclearPowered/Reactor/releases/download/2.5.1/Reactor.dll",
+              "format": "dll",
+              "fileName": "Reactor.dll"
+            }
+          }
+        },
+        {
+          "version": "2.5.0",
+          "dependencies": [
+            {
+              "id": "bepinex",
+              "version": "6.0.0-be.735"
+            }
+          ],
+          "downloads": {
+            "any": {
+              "url": "https://github.com/NuclearPowered/Reactor/releases/download/2.5.0/Reactor.dll",
+              "format": "dll",
+              "fileName": "Reactor.dll"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "atr",
+      "name": "All The Roles (ATR)",
+      "description": "Zusätzliche Rollen, Spielmodi und Einstellungen. Wähle auf allen Rechnern dieselbe Mod-Version.",
+      "versions": [
+        {
+          "version": "0.14.1",
+          "gameVersion": "17.4.0",
+          "dependencies": [
+            {
+              "id": "reactor",
+              "version": "2.5.1"
+            }
+          ],
+          "downloads": {
+            "x86": {
+              "url": "https://github.com/Zeo666/AllTheRoles/releases/download/0.14.1/AllTheRoles-0.14.1-x86-steam-itch.zip",
+              "format": "zip",
+              "sha256": "e5f9a69e6e62ebe34a9cd549699c4d21093c047bacfd2470f94df36ec3d9f7f1",
+              "extract": [
+                "BepInEx/plugins/AllTheRoles.dll",
+                "BepInEx/plugins/Mini.RegionInstall.dll"
+              ]
+            },
+            "x64": {
+              "url": "https://github.com/Zeo666/AllTheRoles/releases/download/0.14.1/AllTheRoles-0.14.1-x64-epic-msstore.zip",
+              "format": "zip",
+              "sha256": "97c76085732decbbe566048ff9a1af7caeddfc859e6253ef9f9656fd42bf6663",
+              "extract": [
+                "BepInEx/plugins/AllTheRoles.dll",
+                "BepInEx/plugins/Mini.RegionInstall.dll"
+              ]
+            }
+          }
+        },
+        {
+          "version": "0.14.0",
+          "gameVersion": "17.3.0",
+          "dependencies": [
+            {
+              "id": "reactor",
+              "version": "2.5.0"
+            }
+          ],
+          "downloads": {
+            "x86": {
+              "url": "https://github.com/Zeo666/AllTheRoles/releases/download/0.14.0/AllTheRoles-0.14.0-x86-steam-itch.zip",
+              "format": "zip",
+              "sha256": "d7cd2d807dfd605d490435a00ff4460b810a84067686bbb467abac5ce38fa439",
+              "extract": [
+                "BepInEx/plugins/AllTheRoles.dll",
+                "BepInEx/plugins/Mini.RegionInstall.dll"
+              ]
+            },
+            "x64": {
+              "url": "https://github.com/Zeo666/AllTheRoles/releases/download/0.14.0/AllTheRoles-0.14.0-x64-epic-msstore.zip",
+              "format": "zip",
+              "sha256": "4266a164f9dd1db176767659328b414981b901ecb5f1529869069cb266df9fc3",
+              "extract": [
+                "BepInEx/plugins/AllTheRoles.dll",
+                "BepInEx/plugins/Mini.RegionInstall.dll"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "lasmonjas",
+      "name": "Las Monjas",
+      "description": "Rollen, eigene Karte und Spielmodi. Offizielles Komplettpaket inklusive BepInEx, Reactor und RegionInstall. In einem eigenen sauberen Profil installieren.",
+      "versions": [
+        {
+          "version": "4.0.1",
+          "gameVersion": "19.0.0 (2026.9.29)",
+          "description": "Für Among Us 19.0.0 / 2026.9.29 auf Steam und Epic. Vollständiges 64-Bit-Paket mit den vom Mod-Autor mitgelieferten Loader-/Interop-Dateien; keine zusätzlichen Abhängigkeiten installieren.",
+          "dependencies": [],
+          "downloads": {
+            "x64": {
+              "url": "https://github.com/KiraYamato94/LasMonjas/releases/download/4.0.1/Las.Monjas.4.0.1.zip",
+              "format": "zip",
+              "sha256": "21d3a59eaba045276564892c6ff74ebfe4d03bcaa01d3fca8407393e5e77ba21",
+              "archiveRoot": "Las Monjas 4.0.1/",
+              "extract": [
+                "BepInEx/",
+                "dotnet/",
+                "winhttp.dll",
+                "doorstop_config.ini"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

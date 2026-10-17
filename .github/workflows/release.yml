@@ -1,0 +1,32 @@
+name: Windows release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Verify tag matches version
+        shell: pwsh
+        run: |
+          $version = (Get-Content package.json | ConvertFrom-Json).version
+          if ($env:GITHUB_REF_NAME -ne "v$version") { throw 'Tag must match package.json version' }
+      - run: npm test
+      - run: npm run build
+      - run: npm run test:smoke
+      - run: npm run dist
+      - name: Publish release assets
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $assets = @(Get-ChildItem release -File | Where-Object { $_.Extension -in '.exe', '.7z' -or $_.Name -eq 'latest.yml' } | ForEach-Object { $_.FullName })
+          gh release create $env:GITHUB_REF_NAME @assets --title "Orbit $env:GITHUB_REF_NAME" --generate-notes
